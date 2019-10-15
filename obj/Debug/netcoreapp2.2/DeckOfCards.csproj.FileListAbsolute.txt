@@ -1,0 +1,11 @@
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/bin/Debug/netcoreapp2.2/DeckOfCards.deps.json
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/bin/Debug/netcoreapp2.2/DeckOfCards.runtimeconfig.json
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/bin/Debug/netcoreapp2.2/DeckOfCards.runtimeconfig.dev.json
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/bin/Debug/netcoreapp2.2/DeckOfCards.dll
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/bin/Debug/netcoreapp2.2/DeckOfCards.pdb
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/obj/Debug/netcoreapp2.2/DeckOfCards.csprojAssemblyReference.cache
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/obj/Debug/netcoreapp2.2/DeckOfCards.csproj.CoreCompileInputs.cache
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/obj/Debug/netcoreapp2.2/DeckOfCards.AssemblyInfoInputs.cache
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/obj/Debug/netcoreapp2.2/DeckOfCards.AssemblyInfo.cs
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/obj/Debug/netcoreapp2.2/DeckOfCards.dll
+/Users/rtongson/Documents/csharp/oopfun/DeckOfCards/obj/Debug/netcoreapp2.2/DeckOfCards.pdb
