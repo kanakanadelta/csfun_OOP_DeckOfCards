@@ -24,18 +24,17 @@ namespace DeckOfCards
         private List<Card> cards;
 
         public Deck(){
-            cards = ShuffleIn();
+            cards = MakeDeck();
         }
 
          // Getters and Setters
         public List<Card> Cards{get;set;}
 
         // Methods
-        public List<Card> ShuffleIn()
+        public List<Card> MakeDeck()
         {
-            List<Card> shuffledCards = new List<Card>();
+            List<Card> deckMake = new List<Card>();
 
-            Random r = new Random();
             string[] stringVals = new string[]{"Ace","2","3","4","5","6","7","8","9","10","Jack","Queen", "King"};
             string[] suits = new string[]{"Clubs", "Spades", "Hearts", "Diamonds"};
 
@@ -47,12 +46,25 @@ namespace DeckOfCards
                     card.Suit = suits[suitIdx];
                     card.StringVal = stringVals[cardVal];
                     card.Val = cardVal + 1;
-                    shuffledCards.Insert(r.Next(0, shuffledCards.Count), card);
+                    deckMake.Add(card);
                 }
             }
 
-            Cards = shuffledCards;
-            return shuffledCards;
+            Cards = deckMake;
+            return deckMake;
+        }
+
+        public List<Card> Shuffle()
+        {
+            Random r = new Random();
+            for(int idx = 0; idx < Cards.Count; idx++)
+            {
+                Card holdCard = Cards[idx];
+                int rIdx = r.Next(0, 51);
+                Cards[idx] = Cards[rIdx];
+                Cards[rIdx] = holdCard;
+            }
+            return Cards;
         }
     }
 
@@ -68,6 +80,7 @@ namespace DeckOfCards
         {
             Console.WriteLine("Deck of Cards!");
             Deck deck = new Deck();
+            deck.Shuffle();
             foreach(var card in deck.Cards)
             {
                 System.Console.WriteLine($"{card.Suit} : {card.StringVal}");
