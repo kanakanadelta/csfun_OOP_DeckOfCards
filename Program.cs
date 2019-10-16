@@ -59,7 +59,6 @@ namespace DeckOfCards
             int topIdx = Cards.Count-1;
             Card toDeal = Cards[topIdx];
             Cards.RemoveAt(topIdx);
-            System.Console.WriteLine($"deal {toDeal.StringVal} of {toDeal.Suit}");
             return toDeal;
 
         }
@@ -87,6 +86,41 @@ namespace DeckOfCards
 
     class Player
     {
+        private string name;
+        private List<Card> hand;
+
+        public Player(string name){
+            Name = name;
+            Hand = new List<Card>();
+        }
+
+        //GETTERS AND SETTERS
+        public string Name{get;set;}
+        public List<Card> Hand{get;set;}
+
+        //METHODS
+        public Card Draw(Deck deck)
+        {
+            Card CardDrawn = deck.Deal();
+            Hand.Add(CardDrawn);
+            Console.WriteLine($"{Name} draws {CardDrawn.StringVal} of {CardDrawn.Suit}");
+            return CardDrawn;
+        }
+
+        public Card Discard(int idx)
+        {
+            if(idx > Hand.Count-1)
+            {
+                return null;
+            }
+            else
+            {
+                Card toRemove = Hand[idx];
+                Hand.RemoveAt(idx);
+                System.Console.WriteLine($"{Name} discards {toRemove.StringVal} of {toRemove.Suit}");
+                return toRemove;
+            }
+        }
 
     }
     //////////////
@@ -97,10 +131,25 @@ namespace DeckOfCards
         {
             Console.WriteLine("Deck of Cards!");
             Deck deck = new Deck();
+            Player p1 = new Player("Player 1");
+            Player p2 = new Player("Player 2");
             deck.Shuffle();
-            foreach(var card in deck.Cards)
-                System.Console.WriteLine($"{card.Suit} : {card.StringVal}");
+            // foreach(var card in deck.Cards)
+            //     System.Console.WriteLine($"{card.Suit} : {card.StringVal}");
+
+            System.Console.WriteLine($"{deck.Cards[deck.Cards.Count-1].StringVal} of {deck.Cards[deck.Cards.Count-1].Suit}");
+            p1.Draw(deck);
+            p2.Draw(deck);
+            p1.Draw(deck);
+            p2.Draw(deck);
+            p1.Draw(deck);
+            p2.Draw(deck);
+            p1.Discard(0);
+            p2.Discard(5);
+
             System.Console.WriteLine($"Current deck is at {deck.Cards.Count}");
+
+
         }
     }
 }
