@@ -54,6 +54,15 @@ namespace DeckOfCards
             return deckMake;
         }
 
+        public Card Deal()
+        {
+            int topIdx = Cards.Count-1;
+            Card toDeal = Cards[topIdx];
+            Cards.RemoveAt(topIdx);
+            System.Console.WriteLine($"deal {toDeal.StringVal} of {toDeal.Suit}");
+            return toDeal;
+
+        }
         public List<Card> Shuffle()
         {
             Random r = new Random();
@@ -64,6 +73,14 @@ namespace DeckOfCards
                 Cards[idx] = Cards[rIdx];
                 Cards[rIdx] = holdCard;
             }
+            return Cards;
+        }
+
+        public List<Card> Reset()
+        {
+            List<Card> resetCards = MakeDeck();
+            Cards = resetCards;
+            Shuffle();
             return Cards;
         }
     }
@@ -82,9 +99,8 @@ namespace DeckOfCards
             Deck deck = new Deck();
             deck.Shuffle();
             foreach(var card in deck.Cards)
-            {
                 System.Console.WriteLine($"{card.Suit} : {card.StringVal}");
-            }
+            System.Console.WriteLine($"Current deck is at {deck.Cards.Count}");
         }
     }
 }
